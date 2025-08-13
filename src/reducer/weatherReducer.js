@@ -9,7 +9,7 @@ const defaultState = {
 export const weatherReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "SET_WEATHER":
-            return {...state, weather: action.payload}
+            return {...state, weather: action.payload, message: ""}
         case "SET_MESSAGE":
             return {...state, message: action.payload}
         default:

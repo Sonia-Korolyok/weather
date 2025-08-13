@@ -26,7 +26,7 @@ export const fetchWeather = (city) => {
                     pressure: data.main.pressure,
                     sunset: (new Date(data.sys.sunset * 1000)).toLocaleTimeString()
                 }));
-                dispatch(setMessage(""))
+                // dispatch(setMessage(""))
             })
             .catch(err => {
                 console.log(err);
