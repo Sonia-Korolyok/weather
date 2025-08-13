@@ -1,11 +1,18 @@
-const Weather = ({weather, message}) => {
+import { useSelector } from 'react-redux';
+
         // if (message) {
         //     return (
         //         <div>{message}</div>
         //     )
         // } else {
+
+    const Weather = () => {
+        const weather = useSelector(state => state.weatherData);
+        const message = useSelector(state => state.message);
+
+
         return (
-            <div className={'infoWeath'}>
+            <div className={'infoWeather'}>
                 {!message &&
                     <>
                         <p>Location: {weather.country}, {weather.city}</p>
