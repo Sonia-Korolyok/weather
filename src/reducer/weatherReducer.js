@@ -1,21 +1,17 @@
-import {base_url} from "../utils/constans.js";
+import {SET_WEATHER, SET_MESSAGE} from "../actions/weatherActions.js";
 
-const initialState = {
-    weatherData: base_url,
+const defaultState = {
+    weather: {},
     message: "Enter city name"
 };
 
 
-export const weatherReducer = (state = initialState, action) => {
+export const weatherReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case "FETCH_WEATHER":
-            return {
-                ...state, weatherData: action.payload, message: ""
-            };
+        case "SET_WEATHER":
+            return {...state, weather: action.payload}
         case "SET_MESSAGE":
-            return {
-                ...state, message: action.payload
-            }
+            return {...state, message: action.payload}
         default:
             return state;
     }
